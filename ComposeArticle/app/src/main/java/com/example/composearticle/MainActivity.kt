@@ -60,7 +60,7 @@ fun ArticleCard(
     Column(modifier = modifier) {
         Image(
             painter = image,
-            contentDescription = "null",
+            contentDescription = null,
         )
         Text(
             text = title,
