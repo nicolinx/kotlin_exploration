@@ -7,9 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,10 +30,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TaskManagerTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    TaskManagerApp(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    TaskManagerScreen()
                 }
             }
         }
@@ -39,23 +39,16 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun TaskManagerApp(modifier: Modifier = Modifier) {
-    TaskManagerView(modifier);
-}
-
-@Composable
-fun TaskManagerView(modifier: Modifier = Modifier) {
-    val image = painterResource(R.drawable.ic_task_completed);
-
+fun TaskManagerScreen() {
     Column(
-        modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxHeight()
+            .fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = image,
-            contentDescription = null
-        )
+        val image = painterResource(R.drawable.ic_task_completed);
+        Image(painter = image, contentDescription = null)
         Text(
             text = stringResource(R.string.all_tasks_completed),
             fontWeight = FontWeight.Bold,
@@ -72,6 +65,6 @@ fun TaskManagerView(modifier: Modifier = Modifier) {
 @Composable
 fun TaskManagerAppPreview() {
     TaskManagerTheme {
-        TaskManagerApp()
+        TaskManagerScreen()
     }
 }
