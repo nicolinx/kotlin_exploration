@@ -40,41 +40,32 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun ComposeQuadrantScreen(modifier: Modifier = Modifier) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize(),
-    ) {
-        Row(
-            modifier = Modifier
-                .weight(1f)
-        ) {
-            QuadrantCard(
-                color = Color(0xFFEADDFF),
+    Column(modifier = Modifier.fillMaxSize()) {
+        Row(modifier = Modifier.weight(1f)) {
+            ComposableInfoCard(
                 title = "Text composable",
-                desc = "Displays text and follows the recommended Material Design guidelines.",
+                description = "Displays text and follows the recommended Material Design guidelines.",
+                backgroundColor = Color(0xFFEADDFF),
                 modifier = Modifier.weight(1f)
             )
-            QuadrantCard(
-                color = Color(0xFFD0BCFF),
+            ComposableInfoCard(
                 title = "Image composable",
-                desc = "Creates a composable that lays out and draws a given Painter class object.",
+                description = "Creates a composable that lays out and draws a given Painter class object.",
+                backgroundColor = Color(0xFFD0BCFF),
                 modifier = Modifier.weight(1f)
             )
         }
-        Row(
-            modifier = Modifier
-                .weight(1f)
-        ) {
-            QuadrantCard(
-                color = Color(0xFFB69DF8),
+        Row(modifier = Modifier.weight(1f)) {
+            ComposableInfoCard(
                 title = "Row composable",
-                desc = "A layout composable that places its children in a horizontal sequence.",
+                description = "A layout composable that places its children in a horizontal sequence.",
+                backgroundColor = Color(0xFFB69DF8),
                 modifier = Modifier.weight(1f)
             )
-            QuadrantCard(
-                color = Color(0xFFF6EDFF),
+            ComposableInfoCard(
                 title = "Column composable",
-                desc = "A layout composable that places its children in a vertical sequence.",
+                description = "A layout composable that places its children in a vertical sequence.",
+                backgroundColor = Color(0xFFF6EDFF),
                 modifier = Modifier.weight(1f)
             )
         }
@@ -82,12 +73,14 @@ fun ComposeQuadrantScreen(modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun QuadrantCard(
-    color: Color, title: String, desc: String,
+fun ComposableInfoCard(
+    title: String,
+    description: String,
+    backgroundColor: Color,
     modifier: Modifier = Modifier
 ) {
     Surface(
-        color = color,
+        color = backgroundColor,
         modifier = modifier
             .fillMaxSize()
     ) {
@@ -104,7 +97,7 @@ fun QuadrantCard(
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             Text(
-                text = desc,
+                text = description,
                 textAlign = TextAlign.Justify
             )
         }
