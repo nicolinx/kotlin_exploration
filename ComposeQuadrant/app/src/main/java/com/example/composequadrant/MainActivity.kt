@@ -9,8 +9,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,10 +30,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             ComposeQuadrantTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    ComposeQuadrantScreen(
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    ComposeQuadrantApp()
                 }
             }
         }
@@ -39,9 +42,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ComposeQuadrantScreen(modifier: Modifier = Modifier) {
-    Column(modifier = Modifier.fillMaxSize()) {
-        Row(modifier = Modifier.weight(1f)) {
+fun ComposeQuadrantApp() {
+    Column(Modifier.fillMaxWidth()) {
+        Row(Modifier.weight(1f)) {
             ComposableInfoCard(
                 title = "Text composable",
                 description = "Displays text and follows the recommended Material Design guidelines.",
@@ -55,7 +58,7 @@ fun ComposeQuadrantScreen(modifier: Modifier = Modifier) {
                 modifier = Modifier.weight(1f)
             )
         }
-        Row(modifier = Modifier.weight(1f)) {
+        Row(Modifier.weight(1f)) {
             ComposableInfoCard(
                 title = "Row composable",
                 description = "A layout composable that places its children in a horizontal sequence.",
@@ -82,8 +85,8 @@ fun ComposableInfoCard(
     Column(
         modifier = modifier
             .fillMaxSize()
-            .padding(16.dp)
-            .background(backgroundColor),
+            .background(backgroundColor)
+            .padding(16.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -101,8 +104,8 @@ fun ComposableInfoCard(
 
 @Preview(showBackground = true)
 @Composable
-fun ComposeQuadrantScreenPreview() {
+fun ComposeQuadrantAppPreview() {
     ComposeQuadrantTheme {
-        ComposeQuadrantScreen()
+        ComposeQuadrantApp()
     }
 }
