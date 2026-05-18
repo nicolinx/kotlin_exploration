@@ -55,7 +55,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun BusinessCardScreen(modifier: Modifier = Modifier) {
     Column(
-        Modifier
+        modifier
             .fillMaxSize()
             .background(color = Color(0xFFDAE4DB))
     ) {
@@ -100,24 +100,27 @@ fun ContactInformation(modifier: Modifier = Modifier) {
     Column(
         modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.spacedBy(space = 16.dp)
+        verticalArrangement = Arrangement.Center
     ) {
-        ContactListTile(text = "+611 (123) 444 555 666", icon = Icons.Default.Phone)
-        ContactListTile(text = "@AndroidDev", icon = Icons.Default.Share)
-        ContactListTile(text = "jen.doe@android.com", icon = Icons.Default.Email)
+        Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
+            ContactListTile(text = "+611 (123) 444 555 666", icon = Icons.Default.Phone)
+            ContactListTile(text = "@AndroidDev", icon = Icons.Default.Share)
+            ContactListTile(text = "jen.doe@android.com", icon = Icons.Default.Email)
+        }
     }
 }
 
 @Composable
 fun ContactListTile(text: String, icon: ImageVector) {
-    Row() {
+    Row(verticalAlignment = Alignment.CenterVertically) {
         Icon(
             imageVector = icon,
             contentDescription = null,
             tint = BrandGreen,
+            modifier = Modifier.size(24.dp)
         )
-        Spacer(Modifier.width(12.dp))
-        Text(text = text)
+        Spacer(Modifier.width(24.dp))
+        Text(text = text, fontSize = 16.sp)
     }
 }
 
