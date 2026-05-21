@@ -8,9 +8,7 @@ fun main(){
 
 class Song(val title: String, val artist: String, val yearPublished:Int, val playCount: Int){
   var isPopular = false
-  get(){
-    return playCount > 1000
-  }
+  get() = playCount >= 1000
 
   fun printDetail(){
     println("$title, performed by $artist, was released in $yearPublished. IsPopular: $isPopular");
