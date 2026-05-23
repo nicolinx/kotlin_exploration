@@ -7,5 +7,5 @@
     <string name="lemon_tree_description">Lemon tree</string>
     <string name="lemon_description">Lemon</string>
     <string name="lemon_drink_description">Glass of lemonade</string>
-    <string name="lemon_emptu_description">Empty glass</string>
+    <string name="lemon_empty_description">Empty glass</string>
 </resources>
