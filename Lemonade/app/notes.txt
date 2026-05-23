@@ -5,18 +5,19 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
@@ -37,42 +38,55 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.lemonade.ui.theme.LemonadeTheme
 
+// ==========================================
+// 1. DOMAIN MODELS & ENUMS
+// ==========================================
+
+/**
+ * Representasi state setiap langkah di game Lemonade.
+ * Menggunakan Enum menjamin type-safety (tidak akan ada step gaib di luar 4 ini).
+ */
 enum class LemonadeStep {
-    TREE, SQUEEZE, DRINK, EMPTY
+    TREE, SQUEEZE, DRINK, RESTART
 }
 
+/**
+ * Data class untuk membungkus seluruh resource UI per langkah.
+ * Ini membuat kode UI bersih dari tumpukan kondisional 'when'.
+ */
 data class LemonadeUiState(
     val imageRes: Int,
     val contentDescriptionRes: Int,
-    val descriptionRes: Int,
+    val descriptionRes: Int
 )
 
-// Extension Enum to UI State
+// Extension function untuk memetakan Enum langsung ke Resource UI-nya
 fun LemonadeStep.toUiState(): LemonadeUiState = when (this) {
     LemonadeStep.TREE -> LemonadeUiState(
         R.drawable.lemon_tree,
         R.string.lemon_tree_description,
         R.string.lemon_tree
     )
-
     LemonadeStep.SQUEEZE -> LemonadeUiState(
         R.drawable.lemon_squeeze,
-        R.string.lemon_squeeze_description,
-        R.string.lemon_squeeze
+        R.string.lemon_description,
+        R.string.lemon
     )
-
     LemonadeStep.DRINK -> LemonadeUiState(
         R.drawable.lemon_drink,
         R.string.lemon_drink_description,
         R.string.lemon_drink
     )
-
-    LemonadeStep.EMPTY -> LemonadeUiState(
+    LemonadeStep.RESTART -> LemonadeUiState(
         R.drawable.lemon_restart,
         R.string.lemon_empty_description,
         R.string.lemon_empty
     )
 }
+
+// ==========================================
+// 2. ACTIVITY & ENTRY POINT
+// ==========================================
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,32 +100,37 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// ==========================================
+// 3. COMPOSABLE SCREENS (STATEFUL)
+// ==========================================
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LemonadeApp() {
+    // State Hoisting: Semua state aplikasi ditaruh di level paling atas screen
     var currentStep by remember { mutableStateOf(LemonadeStep.TREE) }
+    var targetSqueeze by remember { mutableIntStateOf((2..4).random()) }
     var squeezeCount by remember { mutableIntStateOf(0) }
 
+    // Logika Bisnis dipisah dari fungsi UI murni
     val onStepClick = {
         when (currentStep) {
             LemonadeStep.TREE -> {
-                squeezeCount = (2..4).random()
                 currentStep = LemonadeStep.SQUEEZE
             }
-
             LemonadeStep.SQUEEZE -> {
-                squeezeCount--
-
-                if (squeezeCount == 0) {
+                squeezeCount++
+                if (squeezeCount >= targetSqueeze) {
                     currentStep = LemonadeStep.DRINK
                 }
             }
-
             LemonadeStep.DRINK -> {
-                currentStep = LemonadeStep.EMPTY
+                currentStep = LemonadeStep.RESTART
             }
-
-            LemonadeStep.EMPTY -> {
+            LemonadeStep.RESTART -> {
+                // Reset semua state saat game diulang
+                squeezeCount = 0
+                targetSqueeze = (2..4).random()
                 currentStep = LemonadeStep.TREE
             }
         }
@@ -120,54 +139,73 @@ fun LemonadeApp() {
     Scaffold(
         topBar = {
             CenterAlignedTopAppBar(
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFFEBE195)
-                ),
-                title = {
-                    Text("Lemonade", fontWeight = FontWeight.Bold)
-                }
+                title = { Text(text = "Lemonade", fontWeight = FontWeight.Bold) },
+                colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.primaryContainer
+                )
             )
-        }
+        },
+        modifier = Modifier.fillMaxSize()
     ) { innerPadding ->
+        // Oper state dan event-handler ke bawah (Unidirectional Data Flow)
         LemonadeContent(
             currentStep = currentStep,
-            onImageClicked = onStepClick,
+            onImageClick = onStepClick,
             modifier = Modifier.padding(innerPadding)
         )
     }
 }
 
+// ==========================================
+// 4. COMPOSABLE COMPONENTS (STATELESS & REUSABLE)
+// ==========================================
+
+/**
+ * Komponen UI murni (Stateless). Komponen ini tidak tahu cara mengubah data,
+ * dia hanya tahu cara menampilkan data dan meneruskan sinyal klik ke atas.
+ */
 @Composable
 fun LemonadeContent(
     currentStep: LemonadeStep,
-    onImageClicked: () -> Unit,
+    onImageClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    // Dapatkan data resource berdasarkan objek state saat ini
     val uiState = currentStep.toUiState()
 
     Column(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier
+            .fillMaxSize()
+            .wrapContentHeight(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
     ) {
         Button(
-            onClick = onImageClicked,
+            onClick = onImageClick,
             shape = RoundedCornerShape(dimensionResource(R.dimen.button_corner_radius)),
-            colors = ButtonDefaults.buttonColors(containerColor = Color((0xFFD2E7DA)))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD2E7DA))
         ) {
             Image(
                 painter = painterResource(uiState.imageRes),
                 contentDescription = stringResource(uiState.contentDescriptionRes),
                 modifier = Modifier
-                    .width(dimensionResource(R.dimen.button_image_width))
-                    .height(dimensionResource(R.dimen.button_image_height))
+                    .size(
+                        width = dimensionResource(R.dimen.button_image_width),
+                        height = dimensionResource(R.dimen.button_image_height)
+                    )
                     .padding(dimensionResource(R.dimen.button_interior_padding))
             )
         }
-        Spacer(Modifier.height(16.dp))
-        Text(stringResource(uiState.descriptionRes))
+        Spacer(modifier = Modifier.height(16.dp))
+        Text(
+            text = stringResource(uiState.descriptionRes),
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }
+
+// ==========================================
+// 5. PREVIEWS
+// ==========================================
 
 @Preview(showBackground = true)
 @Composable
