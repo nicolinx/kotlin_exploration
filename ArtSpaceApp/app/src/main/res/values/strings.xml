@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Art Space App</string>
+    <string name="art_1_description">“Self-Portrait” 1659, oil on canvas. Andrew W. Mellon Collection.</string>
+    <string name="art_1_author">Rembrandt van Rijn</string>
+    <string name="art_1_year">1659</string>
+    <string name="art_2_description">“Alfred la Guigne” 1894, oil on cardboard. Chester Dale Collection.</string>
+    <string name="art_2_author">Henri de Toulouse-Lautrec</string>
+    <string name="art_2_year">1894</string>
+    <string name="art_3_description">“Flowers in a Rococo Vase” c. 1876, oil on canvas. Chester Dale Collection.</string>
+    <string name="art_3_author">Paul Cézanne</string>
+    <string name="art_3_year">1876</string>
+</resources>
