@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -21,9 +22,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -62,7 +64,7 @@ fun ArtSpaceApp() {
 
 @Composable
 fun ArtSpaceView(modifier: Modifier = Modifier) {
-    var currentArt by remember { mutableStateOf(0) }
+    var currentArt by remember { mutableIntStateOf(0) }
 
     val artImage = when (currentArt) {
         0 -> R.drawable.art_1
@@ -97,33 +99,45 @@ fun ArtSpaceView(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        ArtDisplay(
-            image = artImage,
+        Box(
             modifier = Modifier
                 .weight(0.7f)
-                .fillMaxSize()
-        )
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            ArtDisplay(
+                image = artImage,
+            )
+        }
 
-        ArtInfo(
-            description = artDescription,
-            author = artAuthor,
-            year = artYear,
+        Box(
             modifier = Modifier
                 .weight(0.2f)
-                .fillMaxSize()
-        )
+                .fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            ArtInfo(
+                description = artDescription,
+                author = artAuthor,
+                year = artYear,
+            )
+        }
 
-        ActionButtons(
-            onPrev = {
-                if (currentArt > 0) currentArt--;
-            },
-            onNext = {
-                if (currentArt < 2) currentArt++;
-            },
+        Box(
             Modifier
                 .weight(0.1f)
-                .fillMaxWidth()
-        )
+                .fillMaxWidth(),
+            contentAlignment = Alignment.Center
+        ) {
+            ActionButtons(
+                onPrev = {
+                    if (currentArt > 0) currentArt--
+                },
+                onNext = {
+                    if (currentArt < 2) currentArt++
+                },
+            )
+        }
     }
 }
 
