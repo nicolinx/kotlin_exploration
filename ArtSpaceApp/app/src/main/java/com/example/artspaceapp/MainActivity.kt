@@ -62,36 +62,45 @@ fun ArtSpaceApp() {
     }
 }
 
+data class ArtworkResource(
+    @DrawableRes val imageId: Int,
+    @StringRes val descriptionId: Int,
+    @StringRes val authorId: Int,
+    @StringRes val yearId: Int,
+)
+
 @Composable
 fun ArtSpaceView(modifier: Modifier = Modifier) {
     var currentArt by remember { mutableIntStateOf(0) }
 
-    val artImage = when (currentArt) {
-        0 -> R.drawable.art_1
-        1 -> R.drawable.art_2
-        2 -> R.drawable.art_3
-        else -> R.drawable.art_1
-    }
+    val artwork = when (currentArt) {
+        0 -> ArtworkResource(
+            R.drawable.art_1,
+            R.string.art_1_description,
+            R.string.art_1_author,
+            R.string.art_1_year
+        )
 
-    val artDescription = when (currentArt) {
-        0 -> R.string.art_1_description
-        1 -> R.string.art_2_description
-        2 -> R.string.art_3_description
-        else -> R.string.art_1_description
-    }
+        1 -> ArtworkResource(
+            R.drawable.art_2,
+            R.string.art_2_description,
+            R.string.art_2_author,
+            R.string.art_2_year
+        )
 
-    val artAuthor = when (currentArt) {
-        0 -> R.string.art_1_author
-        1 -> R.string.art_2_author
-        2 -> R.string.art_3_author
-        else -> R.string.art_1_author
-    }
+        2 -> ArtworkResource(
+            R.drawable.art_3,
+            R.string.art_3_description,
+            R.string.art_3_author,
+            R.string.art_3_year
+        )
 
-    val artYear = when (currentArt) {
-        0 -> R.string.art_1_year
-        1 -> R.string.art_2_year
-        2 -> R.string.art_3_year
-        else -> R.string.art_1_year
+        else -> ArtworkResource(
+            R.drawable.art_1,
+            R.string.art_1_description,
+            R.string.art_1_author,
+            R.string.art_1_year
+        )
     }
 
     Column(
@@ -106,7 +115,7 @@ fun ArtSpaceView(modifier: Modifier = Modifier) {
             contentAlignment = Alignment.Center
         ) {
             ArtDisplay(
-                image = artImage,
+                image = artwork.imageId,
             )
         }
 
@@ -117,9 +126,9 @@ fun ArtSpaceView(modifier: Modifier = Modifier) {
             contentAlignment = Alignment.Center
         ) {
             ArtInfo(
-                description = artDescription,
-                author = artAuthor,
-                year = artYear,
+                description = artwork.descriptionId,
+                author = artwork.authorId,
+                year = artwork.yearId,
             )
         }
 
