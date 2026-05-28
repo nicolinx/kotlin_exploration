@@ -1,12 +1,17 @@
 package com.example.superheroesapp
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -32,10 +37,12 @@ fun HeroCard(hero: Hero, modifier: Modifier = Modifier) {
     shape = MaterialTheme.shapes.medium
   ) {
     Row(
-      modifier = Modifier.padding(16.dp),
+      modifier = Modifier
+        .padding(16.dp)
+        .fillMaxWidth(),
       verticalAlignment = Alignment.CenterVertically
     ) {
-      Column() {
+      Column(Modifier.weight(1f)) {
         Text(
           stringResource(hero.nameRes),
           style = MaterialTheme.typography.displaySmall
@@ -57,10 +64,23 @@ fun HeroCard(hero: Hero, modifier: Modifier = Modifier) {
   }
 }
 
+@Composable
+fun HeroesScreen(modifier: Modifier = Modifier) {
+  LazyColumn(
+    modifier = modifier,
+    contentPadding = PaddingValues(16.dp),
+    verticalArrangement = Arrangement.spacedBy(8.dp)
+  ) {
+    items(HeroesRepository.heroes) { hero ->
+      HeroCard(hero = hero)
+    }
+  }
+}
+
 @Preview(showBackground = true)
 @Composable
-fun HeroCardPreview() {
+fun HeroScreenPreview() {
   SuperheroesTheme() {
-    HeroCard(HeroesRepository.heroes[0])
+    HeroesScreen()
   }
 }
