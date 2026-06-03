@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">My City App</string>
+
+    <string name="category_coffee_title">Coffee Shops</string>
+    <string name="category_coffee_desc">Handpicked local roasteries and vintage coffee spots around the city.</string>
+
+    <string name="coffee_toko_jawa_title">Kopi Toko Djawa</string>
+    <string name="coffee_toko_jawa_desc">A nostalgic, vintage-style coffee shop famous for its signature iced brown sugar coffee and freshly baked pastries.</string>
+
+    <string name="coffee_anomali_title">Anomali Coffee</string>
+    <string name="coffee_anomali_desc">A premium local roastery dedicated to showcasing authentic single-origin coffee beans from all across the Indonesian archipelago.</string>
+
+    <string name="coffee_lantai_atas_title">Lantai Atas Coffee</string>
+    <string name="coffee_lantai_atas_desc">A quiet and cozy hidden gem spot, perfect for catching up on remote work or enjoying a peaceful afternoon espresso.</string>
+
+    <string name="category_restaurant_title">Restaurants</string>
+    <string name="category_restaurant_desc">Top culinary destinations ranging from historic traditional foods to fine dining.</string>
+
+    <string name="restaurant_menteng_title">Seribu Rasa Menteng</string>
+    <string name="restaurant_menteng_title_flavor">Seribu Rasa Menteng</string>
+    <string name="restaurant_menteng_desc">Offers a high-end dining experience featuring refined local Indonesian and South-East Asian seafood cuisines in a cultural pavilion setup.</string>
+
+    <string name="restaurant_henshin_title">Henshin</string>
+    <string name="restaurant_henshin_desc">An ultra-modern rooftop restaurant serving incredible Nikkei cuisine (Japanese-Peruvian fusion) alongside breathtaking panoramic skyscraper views.</string>
+
+    <string name="restaurant_soto_title">Soto Betawi H. Ma\'ruf</string>
+    <string name="restaurant_soto_desc">A legendary culinary institution serving authentic beef soup made with a rich, aromatic coconut milk broth since the 1940s.</string>
+
+    <string name="category_kid_title">Kid-Friendly Places</string>
+    <string name="category_kid_desc">Fun, educational, and active theme spots to keep the little ones fully entertained.</string>
+
+    <string name="kid_aquarium_title">Jakarta Aquarium &amp; Safari</string>
+    <string name="kid_aquarium_desc">An indoor boutique aquarium and safari zone hosting over 3,500 species of marine and land animals with interactive feeding shows.</string>
+
+    <string name="kid_kidzania_title">KidZania</string>
+    <string name="kid_kidzania_desc">An indoor edutainment theme park built like a realistic replica of a real city where children can role-play dozens of exciting adult professions.</string>
+
+    <string name="kid_moja_title">Moja Museum</string>
+    <string name="kid_moja_desc">An interactive art venue featuring colorful, retro rooms designed for roller-skating, canvas painting, and taking creative family photos.</string>
+
+    <string name="category_shop_title">Shopping Centers</string>
+    <string name="category_shop_desc">The finest retail hubs, high-end fashion malls, and modern lifestyle centers.</string>
+
+    <string name="shop_ashta_title">Ashta District 8</string>
+    <string name="shop_ashta_desc">A chic and highly aesthetic lifestyle hub featuring upscale boutique shops, trending open-air spaces, and exceptional modern architecture.</string>
+
+    <string name="shop_gi_title">Grand Indonesia</string>
+    <string name="shop_gi_desc">One of the largest premier shopping malls in Southeast Asia, offering an endless selection of global retail brands and family entertainment complexes.</string>
+
+    <string name="shop_pi_title">Plaza Indonesia</string>
+    <string name="shop_pi_desc">The ultimate high-end shopping luxury destination, catering to ultra-exclusive international fashion labels and elite fine dining spots.</string>
+
+</resources>
