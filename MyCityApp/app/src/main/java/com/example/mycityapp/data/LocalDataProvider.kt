@@ -122,4 +122,8 @@ object LocalDataProvider {
             ),
         )
     }
+
+    fun getItemsByCategoryId(categoryId: Int): List<Item> {
+        return getItemsData().filter { it.categoryId == categoryId }
+    }
 }
