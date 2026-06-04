@@ -6,6 +6,7 @@ import com.example.mycityapp.model.Category
 import com.example.mycityapp.model.Item
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class MyCityViewModel : ViewModel() {
@@ -15,7 +16,7 @@ class MyCityViewModel : ViewModel() {
         )
     )
 
-    val uiState: StateFlow<MyCityState> = _uiState
+    val uiState: StateFlow<MyCityState> = _uiState.asStateFlow()
 
     fun selectCategory(category: Category) {
         _uiState.update { it ->

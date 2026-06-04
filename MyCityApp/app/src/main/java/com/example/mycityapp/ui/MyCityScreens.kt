@@ -352,19 +352,19 @@ fun MyCityExpandedView(
         CategoriesList(
             categories = categories,
             onClick = onCategoryClick,
-            modifier = Modifier.weight(3f)
+            modifier = Modifier.weight(2f)
         )
         ItemsList(
             items = items,
             onClick = onItemClick,
             onBackButtonClick = {},
-            modifier = Modifier.weight(3f)
+            modifier = Modifier.weight(2f)
         )
         if (selectedItem != null)
             ItemDetail(
                 item = selectedItem,
                 onBackButtonClick = {},
-                modifier = Modifier.weight(3f)
+                modifier = Modifier.weight(4f)
             )
     }
 }
