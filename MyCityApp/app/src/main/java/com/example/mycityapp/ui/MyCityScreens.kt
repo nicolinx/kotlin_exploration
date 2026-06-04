@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -51,8 +52,12 @@ fun MyCityApp(
 //            categories = LocalDataProvider.getCategoriesData(),
 //            modifier = Modifier.padding(innerPadding)
 //        )
-        ItemsList(
-            items = LocalDataProvider.getItemsData(),
+//        ItemsList(
+//            items = LocalDataProvider.getItemsData(),
+//            modifier = Modifier.padding(innerPadding)
+//        )
+        ItemDetail(
+            item = LocalDataProvider.getItemsData()[0],
             modifier = Modifier.padding(innerPadding)
         )
     }
@@ -199,5 +204,38 @@ fun ItemCard(
                 )
             }
         }
+    }
+}
+
+@Composable
+fun ItemDetail(
+    item: Item,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(24.dp)
+    ) {
+        Image(
+            painter = painterResource(item.imageResId),
+            contentDescription = null,
+            contentScale = ContentScale.FillWidth,
+            modifier = Modifier
+                .fillMaxWidth(),
+        )
+        Spacer(Modifier.height(16.dp))
+        Text(
+            stringResource(item.titleResId),
+            style = MaterialTheme.typography.titleLarge,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(Modifier.height(16.dp))
+        Text(
+            stringResource(item.descriptionResId),
+            style = MaterialTheme.typography.bodyLarge,
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
