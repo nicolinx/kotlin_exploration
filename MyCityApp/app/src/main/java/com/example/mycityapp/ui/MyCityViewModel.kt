@@ -35,6 +35,17 @@ class MyCityViewModel : ViewModel() {
         }
     }
 
+    fun selectCategoryExpanded(category: Category) {
+        _uiState.update { it ->
+            val items = LocalDataProvider.getItemsByCategoryId(category.id)
+            it.copy(
+                selectedCategory = category,
+                listItems = items,
+                selectedItem = items[0]
+            )
+        }
+    }
+
     fun selectItem(item: Item) {
         _uiState.update { it ->
             it.copy(selectedItem = item)
@@ -45,10 +56,5 @@ class MyCityViewModel : ViewModel() {
         _uiState.update { it ->
             it.copy(selectedItem = null)
         }
-    }
-
-    fun setDefaultForExpandedView() {
-        selectCategory(category = uiState.value.listCategories[0])
-        selectItem(item = uiState.value.listItems[0])
     }
 }

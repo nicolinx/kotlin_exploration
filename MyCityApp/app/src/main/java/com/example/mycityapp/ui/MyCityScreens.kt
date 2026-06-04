@@ -30,6 +30,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -53,20 +54,22 @@ fun MyCityApp(
     val viewModel: MyCityViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
 
-    val contentType: MyCityContentType
-
-    when (windowSize) {
+    val contentType = when (windowSize) {
         WindowWidthSizeClass.Compact,
-        WindowWidthSizeClass.Medium
-            -> {
-            contentType = MyCityContentType.ListOnly
+        WindowWidthSizeClass.Medium -> {
+            MyCityContentType.ListOnly
         }
 
         WindowWidthSizeClass.Expanded -> {
-            contentType = MyCityContentType.ListAndDetail
+            MyCityContentType.ListAndDetail
         }
 
-        else -> contentType = MyCityContentType.ListOnly
+        else -> MyCityContentType.ListOnly
+    }
+
+    LaunchedEffect(key1 = windowSize) {
+        if (contentType == MyCityContentType.ListAndDetail)
+            viewModel.selectCategoryExpanded(uiState.listCategories[0])
     }
 
     BackHandler(enabled = !(contentType == MyCityContentType.ListAndDetail || (uiState.selectedCategory == null))) {
@@ -120,6 +123,19 @@ fun MyCityApp(
                     },
                     modifier = Modifier.padding(innerPadding)
                 )
+        } else {
+            MyCityExpandedView(
+                categories = uiState.listCategories,
+                items = uiState.listItems,
+                selectedItem = uiState.selectedItem,
+                onCategoryClick = {
+                    viewModel.selectCategoryExpanded(it)
+                },
+                onItemClick = {
+                    viewModel.selectItem(it)
+                },
+                modifier = Modifier.padding(innerPadding)
+            )
         }
     }
 }
@@ -320,5 +336,35 @@ fun ItemDetail(
             style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.fillMaxWidth()
         )
+    }
+}
+
+@Composable
+fun MyCityExpandedView(
+    categories: List<Category>,
+    onCategoryClick: (Category) -> Unit,
+    items: List<Item>,
+    onItemClick: (Item) -> Unit,
+    selectedItem: Item?,
+    modifier: Modifier = Modifier
+) {
+    Row(modifier = modifier) {
+        CategoriesList(
+            categories = categories,
+            onClick = onCategoryClick,
+            modifier = Modifier.weight(3f)
+        )
+        ItemsList(
+            items = items,
+            onClick = onItemClick,
+            onBackButtonClick = {},
+            modifier = Modifier.weight(3f)
+        )
+        if (selectedItem != null)
+            ItemDetail(
+                item = selectedItem,
+                onBackButtonClick = {},
+                modifier = Modifier.weight(3f)
+            )
     }
 }
