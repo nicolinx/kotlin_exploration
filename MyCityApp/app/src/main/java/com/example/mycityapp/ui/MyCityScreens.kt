@@ -1,5 +1,7 @@
 package com.example.mycityapp.ui
 
+import androidx.activity.compose.BackHandler
+import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -28,6 +30,8 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
@@ -36,43 +40,110 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.mycityapp.R
-import com.example.mycityapp.data.LocalDataProvider
 import com.example.mycityapp.model.Category
 import com.example.mycityapp.model.Item
+import com.example.mycityapp.utils.MyCityContentType
 
 @Composable
 fun MyCityApp(
     windowSize: WindowWidthSizeClass,
 ) {
+    val viewModel: MyCityViewModel = viewModel()
+    val uiState by viewModel.uiState.collectAsState()
+
+    val contentType: MyCityContentType
+
+    when (windowSize) {
+        WindowWidthSizeClass.Compact,
+        WindowWidthSizeClass.Medium
+            -> {
+            contentType = MyCityContentType.ListOnly
+        }
+
+        WindowWidthSizeClass.Expanded -> {
+            contentType = MyCityContentType.ListAndDetail
+        }
+
+        else -> contentType = MyCityContentType.ListOnly
+    }
+
+    BackHandler(enabled = !(contentType == MyCityContentType.ListAndDetail || (uiState.selectedCategory == null))) {
+        if (uiState.selectedItem != null) {
+            viewModel.unselectItem()
+        } else if (uiState.selectedCategory != null) {
+            viewModel.unselectCategory()
+        }
+    }
+
     Scaffold(
-        topBar = { MyCityTopAppBar() }
+        topBar = {
+            MyCityTopAppBar(
+                titleResId = if (uiState.selectedItem != null) uiState.selectedItem!!.titleResId
+                else if (uiState.selectedCategory != null) uiState.selectedCategory!!.titleResId
+                else R.string.app_name,
+                isShowBack = !(contentType == MyCityContentType.ListAndDetail || (uiState.selectedCategory == null)),
+                onBackButtonClick = {
+                    if (uiState.selectedItem != null) {
+                        viewModel.unselectItem()
+                    } else if (uiState.selectedCategory != null) {
+                        viewModel.unselectCategory()
+                    }
+                }
+            )
+        }
     ) { innerPadding ->
-//        CategoriesList(
-//            categories = LocalDataProvider.getCategoriesData(),
-//            modifier = Modifier.padding(innerPadding)
-//        )
-//        ItemsList(
-//            items = LocalDataProvider.getItemsData(),
-//            modifier = Modifier.padding(innerPadding)
-//        )
-        ItemDetail(
-            item = LocalDataProvider.getItemsData()[0],
-            modifier = Modifier.padding(innerPadding)
-        )
+        if (contentType == MyCityContentType.ListOnly) {
+            if (uiState.selectedCategory == null)
+                CategoriesList(
+                    categories = uiState.listCategories,
+                    onClick = {
+                        viewModel.selectCategory(it)
+                    },
+                    modifier = Modifier.padding(innerPadding)
+                )
+            else if (uiState.selectedItem == null)
+                ItemsList(
+                    items = uiState.listItems,
+                    onClick = {
+                        viewModel.selectItem(it)
+                    },
+                    onBackButtonClick = { viewModel.unselectCategory() },
+                    modifier = Modifier.padding(innerPadding)
+                )
+            else
+                ItemDetail(
+                    item = uiState.selectedItem!!,
+                    onBackButtonClick = {
+                        viewModel.unselectItem()
+                    },
+                    modifier = Modifier.padding(innerPadding)
+                )
+        }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MyCityTopAppBar(modifier: Modifier = Modifier) {
+fun MyCityTopAppBar(
+    @StringRes titleResId: Int,
+    isShowBack: Boolean,
+    onBackButtonClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     TopAppBar(
         title = {
-            Text(stringResource(R.string.app_name))
+            Text(stringResource(titleResId))
         },
         navigationIcon = {
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = null)
+            if (isShowBack) {
+                IconButton(onClick = onBackButtonClick) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = null
+                    )
+                }
             }
         },
         modifier = modifier
@@ -82,6 +153,7 @@ fun MyCityTopAppBar(modifier: Modifier = Modifier) {
 @Composable
 fun CategoriesList(
     categories: List<Category>,
+    onClick: (Category) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -92,7 +164,7 @@ fun CategoriesList(
         items(categories, key = { category -> category.id }) { category ->
             CategoryCard(
                 category = category,
-                onItemClick = { /*TODO*/ }
+                onItemClick = { onClick(category) }
             )
         }
     }
@@ -101,8 +173,14 @@ fun CategoriesList(
 @Composable
 fun ItemsList(
     items: List<Item>,
+    onClick: (Item) -> Unit,
+    onBackButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    BackHandler() {
+        onBackButtonClick()
+    }
+
     LazyColumn(
         modifier = modifier,
         verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
@@ -111,7 +189,7 @@ fun ItemsList(
         items(items, key = { item -> item.id }) { item ->
             ItemCard(
                 item = item,
-                onItemClick = { /*TODO*/ }
+                onItemClick = { onClick(item) }
             )
         }
     }
@@ -210,8 +288,13 @@ fun ItemCard(
 @Composable
 fun ItemDetail(
     item: Item,
+    onBackButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
+    BackHandler() {
+        onBackButtonClick()
+    }
+
     Column(
         modifier = modifier
             .fillMaxWidth()
