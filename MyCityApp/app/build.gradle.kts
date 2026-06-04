@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.compose.material3.window.size.class1)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.compose.material.icons.extended)
 
     testImplementation(libs.junit)
 
