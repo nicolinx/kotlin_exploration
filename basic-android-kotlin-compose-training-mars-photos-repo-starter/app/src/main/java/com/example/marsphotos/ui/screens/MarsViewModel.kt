@@ -13,6 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+@file:OptIn(InternalSerializationApi::class)
+
 package com.example.marsphotos.ui.screens
 
 import androidx.compose.runtime.getValue
@@ -28,6 +30,7 @@ import com.example.marsphotos.MarsPhotosApplication
 import com.example.marsphotos.data.MarsPhotosRepository
 import com.example.marsphotos.model.MarsPhoto
 import kotlinx.coroutines.launch
+import kotlinx.serialization.InternalSerializationApi
 import retrofit2.HttpException
 import java.io.IOException
 
