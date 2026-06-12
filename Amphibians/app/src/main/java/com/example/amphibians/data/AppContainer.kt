@@ -11,10 +11,14 @@ interface AppContainer {
 }
 
 class DefaultAppContainer : AppContainer {
-    private val baseUrl = BuildConfig.BASE_URL;
+    private val baseUrl = BuildConfig.BASE_URL
+
+    private val jsonParser = Json {
+        ignoreUnknownKeys = true
+    }
 
     private val retrofit: Retrofit = Retrofit.Builder()
-        .addConverterFactory(Json.asConverterFactory("application/json".toMediaType()))
+        .addConverterFactory(jsonParser.asConverterFactory("application/json".toMediaType()))
         .baseUrl(baseUrl)
         .build()
 

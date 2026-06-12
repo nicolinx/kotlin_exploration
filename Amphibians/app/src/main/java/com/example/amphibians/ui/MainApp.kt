@@ -9,8 +9,10 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.amphibians.R
 import com.example.amphibians.ui.screens.HomeScreen
+import com.example.amphibians.ui.screens.HomeViewModel
 
 @Composable
 fun MainApp() {
@@ -18,7 +20,11 @@ fun MainApp() {
         modifier = Modifier.fillMaxSize(),
         topBar = { MainTopBar() }
     ) { innerPadding ->
-        HomeScreen(modifier = Modifier.padding(innerPadding))
+        val viewModel: HomeViewModel = viewModel(factory = HomeViewModel.Factory)
+        HomeScreen(
+            homeUiState = viewModel.homeUiState,
+            modifier = Modifier.padding(innerPadding)
+        )
     }
 }
 
