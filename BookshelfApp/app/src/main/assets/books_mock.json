@@ -1,0 +1,965 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 1000000,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "3bJZEAAAQBAJ",
+      "etag": "PJnahiBfSLE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3bJZEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Android UI Development with Jetpack Compose",
+        "subtitle": "Bring declarative and native UIs to life quickly and easily on Android using Jetpack Compose",
+        "authors": [
+          "Thomas Künneth"
+        ],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2022-02-21",
+        "description": "Get started with creating intuitive native user interfaces on Android platforms Key Features Understand the difference between the imperative (Android View) and declarative (Jetpack Compose) approach Learn about the structure of a Compose app, built-in Compose UI elements, and core concepts such as state hoisting and composition over inheritance Write, test, and debug composable functions Book DescriptionJetpack Compose is Android’s new framework for building fast, beautiful, and reliable native user interfaces. It simplifies and significantly accelerates UI development on Android using the declarative approach. This book will help developers to get hands-on with Jetpack Compose and adopt a modern way of building Android applications. The book is not an introduction to Android development, but it will build on your knowledge of how Android apps are developed. Complete with hands-on examples, this easy-to-follow guide will get you up to speed with the fundamentals of Jetpack Compose such as state hoisting, unidirectional data flow, and composition over inheritance and help you build your own Android apps using Compose. You'll also cover concepts such as testing, animation, and interoperability with the existing Android UI toolkit. By the end of the book, you'll be able to write your own Android apps using Jetpack Compose.What you will learn Gain a solid understanding of the core concepts of Jetpack Compose Develop beautiful, neat, and immersive UI elements that are user friendly, reliable, and performant Build a complete app using Jetpack Compose Add Jetpack Compose to your existing Android applications Test and debug apps that use Jetpack Compose Find out how Jetpack Compose can be used on other platforms Who this book is for This book is for any mobile app developer looking to understand the fundamentals of the new Jetpack Compose framework and the benefits of native development. A solid understanding of Android app development, along with some knowledge of the Kotlin programming language, will be beneficial. Basic programming knowledge is necessary to grasp the concepts covered in this book effectively.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781801810241"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1801810249"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 248,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.3.3.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=3bJZEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3bJZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=3bJZEAAAQBAJ&printsec=frontcover&dq=jetpack+compose&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=3bJZEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=3bJZEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 569367,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 398557,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=3bJZEAAAQBAJ&rdid=book-3bJZEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 569367000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 398557000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3bJZEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "It simplifies and significantly accelerates UI development on Android using the declarative approach. This book will help developers to get hands-on with Jetpack Compose and adopt a modern way of building Android applications."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "c1jbEAAAQBAJ",
+      "etag": "fsdNYNKg1vM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/c1jbEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Android UI Development with Jetpack Compose",
+        "subtitle": "Bring declarative and native UI to life quickly and easily on Android using Jetpack Compose and Kotlin",
+        "authors": [
+          "Thomas Künneth"
+        ],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2023-11-03",
+        "description": "Get started with creating intuitive native user interfaces on Android platforms using Kotlin and Jetpack Compose with the help of this illustrated guide Key Features Distinguish between the imperative (Android View) and declarative (Jetpack Compose) approach Explore the Compose app structure, UI elements, and core concepts like state and composition over inheritance Enhance apps with animations, transitions and build for smartphones, tablets, and foldable devices Purchase of the print or Kindle book includes a free PDF eBook Book DescriptionCompose has caused a paradigm shift in Android development, introducing a variety of new concepts that are essential to an Android developer’s learning journey. It solves a lot of pain points associated with Android development and is touted to become the default way to building Android apps over the next few years. This second edition has been thoroughly updated to reflect all changes and additions that were made by Google since the initial stable release, and all examples are based on Material 3 (also called Material You). This book uses practical examples to help you understand the fundamental concepts of Jetpack Compose and how to use them when you are building your own Android applications. You’ll begin by getting an in-depth explanation of the declarative approach, along with its differences from and advantages over traditional user interface (UI) frameworks. Having laid this foundation, the next set of chapters take a practical approach to show you how to write your first composable function. The chapters will also help you master layouts, an important core component of every UI framework, and then move to more advanced topics such as animation, testing, and architectural best practices. By the end of this book, you’ll be able to write your own Android apps using Jetpack Compose and Material Design.What you will learn Recognize the motivation behind Jetpack Compose Gain an understanding of the core concepts of Jetpack Compose Build a complete app using Jetpack Compose Utilize Jetpack Compose inside existing Android applications Test and debug apps that use Jetpack Compose Understand Material Design and how it is implemented using Jetpack Compose Write apps for different form factors Bring your Compose UI to other platforms Who this book is for If you’re an Android developer with existing knowledge of the Kotlin programming language looking to learn how to build modern Android user interfaces using Jetpack Compose, then this book is for you. This book is not an introduction to Android development. You must have a basic understanding of how Android apps are developed using Android Studio.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781837636693"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1837636699"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 278,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.4.5.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=c1jbEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=c1jbEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=c1jbEAAAQBAJ&printsec=frontcover&dq=jetpack+compose&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=c1jbEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=c1jbEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 405145,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 283602,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=c1jbEAAAQBAJ&rdid=book-c1jbEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 405145000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 283602000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=c1jbEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Get started with creating intuitive native user interfaces on Android platforms using Kotlin and Jetpack Compose with the help of this illustrated guide Key Features Distinguish between the imperative (Android View) and declarative (Jetpack ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "cW68EAAAQBAJ",
+      "etag": "X8t/ke9DU5k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/cW68EAAAQBAJ",
+      "volumeInfo": {
+        "title": "Jetpack Compose 1.3 Essentials",
+        "subtitle": "Developing Android Apps with Jetpack Compose 1.3, Android Studio, and Kotlin",
+        "authors": [
+          "Neil Smyth"
+        ],
+        "publisher": "eBookFrenzy",
+        "publishedDate": "2023-04-30",
+        "description": "This book aims to teach you how to build Android applications using Jetpack Compose 1.3, Android Studio Flamingo (2022.2.1), Material Design 3, and the Kotlin programming language. The book begins with the basics by explaining how to set up an Android Studio development environment. The book also includes in-depth chapters introducing the Kotlin programming language, including data types, operators, control flow, functions, lambdas, coroutines, and object-oriented programming. An introduction to the key concepts of Jetpack Compose and Android project architecture is followed by a guided tour of Android Studio in Compose development mode. The book also covers the creation of custom Composables and explains how functions are combined to create user interface layouts, including row, column, box, and list components. Other topics covered include data handling using state properties, key user interface design concepts such as modifiers, navigation bars, and user interface navigation. Additional chapters explore building your own reusable custom layout components. The book covers graphics drawing, user interface animation, transitions, Kotlin Flows, and gesture handling. Chapters also cover view models, SQLite databases, Room database access, the Database Inspector, live data, and custom theme creation. Using in-app billing, you will also learn to generate extra revenue from your app. Finally, the book explains how to package up a completed app and upload it to the Google Play Store for publication. Along the way, the topics covered in the book are put into practice through detailed tutorials, the source code for which is also available for download. Assuming you already have some rudimentary programming experience, are ready to download Android Studio and the Android SDK, and have access to a Windows, Mac, or Linux system, you are ready to start.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781951442644"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1951442644"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 771,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.2.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=cW68EAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=cW68EAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=cW68EAAAQBAJ&printsec=frontcover&dq=jetpack+compose&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=cW68EAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=cW68EAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 690000,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 479000,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=cW68EAAAQBAJ&rdid=book-cW68EAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 690000000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 479000000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Jetpack_Compose_1_3_Essentials-sample-epub.acsm?id=cW68EAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=cW68EAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book aims to teach you how to build Android applications using Jetpack Compose 1.3, Android Studio Flamingo (2022.2.1), Material Design 3, and the Kotlin programming language."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "K8q9EQAAQBAJ",
+      "etag": "nKETvNWYN7M",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/K8q9EQAAQBAJ",
+      "volumeInfo": {
+        "title": "The Android Engineer’s Interview Guide: Preparing for Success in 2026",
+        "authors": [
+          "Dharma Kshetri"
+        ],
+        "publisher": "Dharma Kshetri",
+        "publishedDate": "2026-02-03",
+        "description": "\"The Android Engineer’s Interview Guide: Preparing for Success in 2026\" is a definitive resource for aspiring and experienced Android developers aiming to excel in technical and behavioral interviews. The book delves into the evolution of Android, core development concepts, and advanced topics like Jetpack Compose, MVVM/MVI patterns, and AI integration. It offers practical advice on tackling coding challenges, system design interviews, and behavioral questions. Focusing on the latest trends and tools, this guide equips readers with the knowledge and skills needed to succeed in the competitive Android job market in 2026. What You Will Learn The history and evolution of Android, including key milestones and future trends. Core Android development concepts like lifecycle management, UI design, and data handling. Advanced topics like MVVM/MVI architecture, dependency injection, and performance optimization. How to prepare for technical interviews, including coding challenges, system design, and live coding. The latest trends in Android development, such as Jetpack Compose, AI integration, and IoT. Behavioral interview strategies and soft skills to stand out in hiring. Table of Contents Introduction to Android Engineer Interviews The Android Ecosystem – Evolution and Fundamentals History and Evolution of Android Android OS and Core Concepts Preparing for Android Engineer Interviews Types of Interviews and Strategies Mastering Fundamentals and Advanced Topics Latest Trends, Technologies, and Tools in Android Development Jetpack Compose, Modern Architecture, and AI Integration Performance Optimization and Testing Behavioral and Soft Skills in Interviews Common Behavioral Questions and Emotional Intelligence Future of Android Development and Job Market Trends Emerging Trends and Staying Current Navigating the Job Market Who This Book Is For This book is ideal for: Aspiring Android developers preparing for technical interviews. Experienced engineers looking to update their skills with the latest trends and tools. Professionals transitioning to Android development roles. Anyone interested in mastering Android development concepts and excelling in interviews. Developers aiming to build a strong portfolio and stay competitive in the job market.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9798309167210"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 336,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=K8q9EQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=K8q9EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=K8q9EQAAQBAJ&pg=PA43&dq=jetpack+compose&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=K8q9EQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=K8q9EQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 129000,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 88000,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=K8q9EQAAQBAJ&rdid=book-K8q9EQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 129000000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 88000000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/The_Android_Engineer_s_Interview_Guide_P-sample-pdf.acsm?id=K8q9EQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=K8q9EQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... Composable fun Greeting ( name : String ) { Text ( text = &quot; Hello , $ name ! &quot; ) } 2. Kotlin - Based : Ο \u003cb\u003eJetpack Compose\u003c/b\u003e uses Kotlin&#39;s 43 Chapter 7: \u003cb\u003eJetpack Compose\u003c/b\u003e and Modern UI Development 7.1. Why \u003cb\u003eJetpack Compose\u003c/b\u003e is the Future of Android&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "PUmBEQAAQBAJ",
+      "etag": "6EBo9fSP0N8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/PUmBEQAAQBAJ",
+      "volumeInfo": {
+        "title": "How to Build Android Applications with Kotlin",
+        "subtitle": "A Hands-On Guide to Developing, Testing, and Publishing Production-grade Android 16 Apps",
+        "authors": [
+          "Alex Forrester",
+          "Eran Boudjnah",
+          "Alexandru Dumbravan",
+          "Jomar Tigcal"
+        ],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2025-09-05",
+        "description": "Utilize Android programming to build scalable and reliable apps using industry best practices with practical guidance from a team of Android experts with over 40 years of combined experienceGet a free PDF copy, AI Assistant, and Next-Gen Reader with your book Key Features Build real-world Android apps with Kotlin and the Jetpack Compose UI framework Leverage the latest libraries to accelerate your Android development Overcome development challenges with tips and tricks from experienced Android professionals Get With Your Book: PDF Copy, AI Assistant, and Next-Gen Reader Free Book Description Written by four veteran developers with 60+ years of collective experience, this updated third edition will jumpstart your Android development journey, focusing on Kotlin libraries and Jetpack Compose, Google's powerful declarative UI framework.You'll learn the fundamentals of app development, enabling you to use Android Studio, as well as get to grips with Jetpack Compose to create your first screens, build apps to run them on virtual devices through guided exercises, and implement Jetpack Compose's layout groups to make the most of lists, images, and maps. The book has been updated with Kotlin's powerful networking and coroutines libraries to help you fetch data in the background from a web service and manage displaying the data using Kotlin flows. You'll learn about testing, creating clean architecture, and persisting data, as well as exploring the dependency injection pattern and learning how to publish your apps on the Google Play Store. You'll also work on realistic projects split up into bite-size exercises and activities, along with building apps to create quizzes, read news articles, check weather reports, store recipes, retrieve movie information, and remind you where you parked your car.By the end of this book, you'll have gained the skills and confidence to build your own creative Android apps using Kotlin. What you will learn Create maintainable and scalable apps using Kotlin Grasp Android asynchronous programming with coroutines and the Flow API Simplify app development with Google architecture components Apply MVVM and Repository architecture patterns to standardize retrieving and displaying data from outside sources Increase app stability and robustness with unit and integration tests Use standard libraries for dependency injection, networking, data parsing, and persistence Publish your app on the Google Play Store Who this book is for This book is for beginners as well as intermediate-level developers with no prior experience in Android app development. Basic knowledge of the Kotlin programming language or experience in a similar programming language, along with a willingness to brush up on Kotlin is required.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781835882771"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1835882773"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 654,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=PUmBEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=PUmBEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=PUmBEQAAQBAJ&pg=PA559&dq=jetpack+compose&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=PUmBEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=PUmBEQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 547407,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 383185,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=PUmBEQAAQBAJ&rdid=book-PUmBEQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 547407000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 383185000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=PUmBEQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... Jetpack. Compose. In the previous chapter, you learned about architecture patterns such as MVVM. You now know how to improve the architecture ... \u003cb\u003eJetpack Compose\u003c/b\u003e API that allows. Chapter 15: Advanced \u003cb\u003eJetpack Compose\u003c/b\u003e Technical requirements."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "1dXWEAAAQBAJ",
+      "etag": "t8u6CQYyUP4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1dXWEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Mobile DevOps Playbook",
+        "subtitle": "A practical guide for delivering high-quality mobile applications like a pro",
+        "authors": [
+          "Moataz Nabil"
+        ],
+        "publisher": "Packt Publishing Ltd",
+        "publishedDate": "2023-09-28",
+        "description": "Learn to use mobile DevOps for faster, more efficient mobile development by uncovering the secrets of mobile application development lifecycle Key Features Discover best practices and mobile DevOps tools for test automation, app releases, performance optimization, security, error tracking, and more Enhance efficiency, speed, and quality of your development process with mobile DevOps Explore mobile DevOps components like continuous integration, testing, deployment, and monitoring Purchase of the print or Kindle book includes a free PDF eBook Book DescriptionTo build mobile apps, you need to understand mobile-first features, tools, and processes that help you build, test, and release robust apps faster and more efficiently. The multitude of challenges stemming from mobile development's inherent complexities, including native iOS and Android app creation, cross-platform frameworks, and the implementation of scalable architectures within extensive teams, collectively contribute to a substantial number of obstacles that can significantly prolong the release process. This book will help you understand and implement the best practices of mobile DevOps for continuous integration, testing, delivery, deployment, and monitoring. You’ll explore different challenges faced by developers due to varied OSs, the unforgiving nature of mobile applications, and continuous updates to mobile phones and learn how to maneuver through these challenges. You’ll also get to grips with the latest trends while discovering the potential future of mobile DevOps, with valuable insights and guidance about integrating mobile development teams into your organization. By the end of this book, you’ll be well-equipped to successfully implement mobile DevOps and build fast, qualitative, and efficient mobile apps for your team or organization.What you will learn Discover the principles, components, and concepts of mobile DevOps Develop a successful mobile CI/CD strategy in your organization Identify the tools and processes for mobile app release and distribution Develop and release mobile applications efficiently and reliably Implement continuous testing with mobile DevOps Leverage Mobile DevSecOps to improve security, efficiency of your Mobile app development process Understand how Platform Engineering and IDP Teams can improve Developer Productivity in Mobile DevOps Identify and fix problems with mobile application performance and data usage Who this book is for This book is for DevOps engineers looking to learn more about mobile DevOps to build effective processes for releasing mobile apps quickly and frequently. It’s also an excellent resource for mobile developers, mobile release managers, mobile architects, mobile platform engineers, and QA engineers, involved in mobile app development. Familiarity with DevOps and mobile app challenges related to testing, releasing, and monitoring especially at scale is a prerequisite.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781803246499"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1803246499"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 384,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.4.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=1dXWEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1dXWEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=1dXWEAAAQBAJ&pg=PA138&dq=jetpack+compose&hl=&cd=6&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=1dXWEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1dXWEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 514627,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 360239,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=1dXWEAAAQBAJ&rdid=book-1dXWEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 514627000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 360239000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=1dXWEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... Jetpack. Compose. \u003cb\u003eJetpack Compose\u003c/b\u003e (https://developer.android.com/\u003cb\u003ejetpack\u003c/b\u003e/\u003cb\u003ecompose\u003c/b\u003e) is Google&#39;s modern UI toolkit for Android applications. The \u003cb\u003eJetpack Compose\u003c/b\u003e Testing library (https:// developer.android.com/\u003cb\u003ejetpack\u003c/b\u003e/\u003cb\u003ecompose\u003c/b\u003e/testing) aims to&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "VdcoEQAAQBAJ",
+      "etag": "eORs2ILaDG4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/VdcoEQAAQBAJ",
+      "volumeInfo": {
+        "title": "ADVANCED ANDROID DEVELOPMENT",
+        "subtitle": "FROM ARCHITECTURE TO MONETIZATION",
+        "authors": [
+          "ARCHIT JOSHI RAVI KIRAN PAGIDI OM GOEL PROF. (DR) ARPIT JAIN"
+        ],
+        "publisher": "DeepMisti Publication",
+        "publishedDate": "2024-10-10",
+        "description": "In The Fast-Paced World Of Mobile Technology, Android Development Has Emerged As One Of The Most Dynamic And Rewarding Fields For Developers And Businesses Alike. This Book, Advanced Android Development: From Architecture To Monetization, Is Designed To Guide Readers Through The Complexities Of Building Sophisticated Android Applications While Exploring The Opportunities To Generate Revenue Through Strategic Monetization. Our Goal Is To Provide Readers With Both The Technical Knowledge And Practical Insights Needed To Excel In Modern Android Development. This Book Covers A Comprehensive Range Of Topics, From Understanding The Architecture That Underpins Android Applications To The Various Monetization Strategies That Can Be Implemented. We Delve Into Essential Concepts Such As Advanced App Architecture Patterns, Efficient Memory Management, And Integration Of Third-Party Services. Moreover, We Explore Methods For Implementing Monetization Models Like In-App Purchases, Advertisements, And Subscriptions, Ensuring That Developers Can Make Informed Decisions About How To Profit From Their Creations. To Ensure The Relevance And Practicality Of This Guide, We Have Drawn On The Latest Trends And Best Practices In The Android Ecosystem. Whether You're A Student, An Experienced Developer, Or Someone Interested In The Business Aspects Of App Development, This Book Will Offer Valuable Insights Into Every Stage Of The Android Development Lifecycle. Topics Are Presented In A Clear And Structured Manner, Enabling Readers To Apply The Knowledge Gained Directly To Their Own Projects. The Motivation For This Book Stems From The Recognition Of Android's Unparalleled Role In The Mobile App Market And The Growing Need For Developers To Master Not Just The Technical Aspects Of App Building, But Also The Business Strategies That Can Lead To Successful App Monetization. We Extend Our Heartfelt Gratitude To Everyone Who Has Contributed To This Project, Especially Those Who Have Fostered Innovation And Knowledge Sharing In The Android Development Community. We Hope This Book Will Be A Valuable Resource For Anyone Looking To Advance Their Android Development Skills And Build Profitable Apps. The Knowledge And Strategies Shared Within These Pages Aim To Empower Developers To Succeed In Both The Technical And Business Facets Of App Development. Thank You For Embarking On This Journey With Us. Authors",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9789360446703"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "936044670X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 221,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=VdcoEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=VdcoEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=VdcoEQAAQBAJ&pg=PA64&dq=jetpack+compose&hl=&cd=7&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=VdcoEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=VdcoEQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 35499,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 29499,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=VdcoEQAAQBAJ&rdid=book-VdcoEQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 35499000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 29499000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/ADVANCED_ANDROID_DEVELOPMENT-sample-pdf.acsm?id=VdcoEQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=VdcoEQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eJetpack Compose\u003c/b\u003e, including how to define, update, and respond to changes in application state. Additionally, we will discuss strategies for ... \u003cb\u003eJetpack Compose\u003c/b\u003e Types of State in \u003cb\u003eJetpack Compose\u003c/b\u003e Managing State in \u003cb\u003eJetpack Compose\u003c/b\u003e."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "x5tbEQAAQBAJ",
+      "etag": "I46lVrT0XwU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/x5tbEQAAQBAJ",
+      "volumeInfo": {
+        "title": "Android Development with Android Studio: Java App Development from Basic to Advanced",
+        "authors": [
+          "Aamer Khan"
+        ],
+        "publisher": "Code Academy",
+        "description": "Start your journey into mobile app creation with Android Development with Android Studio: Java App Development from Basic to Advanced. This hands-on guide teaches you how to build real-world Android applications using Java and Android Studio, the official IDE for Android. Whether you're a beginner or looking to upgrade your skills, you'll learn everything from setting up your environment to publishing your app on the Play Store. With step-by-step tutorials, practical projects, and best practices, this book makes Android development accessible, effective, and future-ready.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9789395342544"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "9395342544"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 147,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=x5tbEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=x5tbEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=x5tbEQAAQBAJ&pg=PT138&dq=jetpack+compose&hl=&cd=8&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=x5tbEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=x5tbEQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 17499,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 17499,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=x5tbEQAAQBAJ&rdid=book-x5tbEQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 17499000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 17499000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Android_Development_with_Android_Studio-sample-epub.acsm?id=x5tbEQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Android_Development_with_Android_Studio-sample-pdf.acsm?id=x5tbEQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=x5tbEQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eJetpack Compose\u003c/b\u003e and be ready to build modern Android UIs efficiently . 29.1 Why \u003cb\u003eJetpack Compose\u003c/b\u003e ? \u003cb\u003eJetpack Compose\u003c/b\u003e is designed to overcome the limitations of the traditional XML - based UI system . 29.1.1 Advantages of \u003cb\u003eJetpack Compose\u003c/b\u003e 1&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "LjTZEAAAQBAJ",
+      "etag": "Hn5JonL0pQc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/LjTZEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Mastering Kotlin",
+        "authors": [
+          "Cybellium"
+        ],
+        "publisher": "Cybellium Ltd",
+        "publishedDate": "2023-09-26",
+        "description": "Crafting the Future of Android and Beyond Embark on an enlightening exploration of Kotlin—the modern, concise, and expressive language that's redefining Android development and expanding its influence across various platforms. Whether you're just beginning your programming saga or are a veteran developer looking to update your toolkit, \"Mastering Kotlin\" offers the guidance and insights you need. Dive in and uncover: · Kotlin Foundations: Traverse the essentials of Kotlin, from its basic syntax to its functional and object-oriented programming paradigms. · Elevated Code: Grasp the nuances of idiomatic Kotlin, ensuring your code is both powerful and elegant. · Expert Techniques: Delve into advanced topics like coroutines, DSL creation, and multiplatform development, empowering you to harness Kotlin's full potential. · Practical Endeavors: Engage with hands-on projects that provide real-world context, ensuring your skills are battle-tested and industry-ready. · Interoperability Insights: Seamlessly integrate Kotlin with existing Java codebases and understand the harmony between these two juggernauts of the JVM. \"Mastering Kotlin\" is more than a guide—it's a compass, guiding you through the ever-evolving landscape of modern development with clarity and precision. Step into the future of development with Kotlin at your fingertips.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9798860900936"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 205,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.2.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=LjTZEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=LjTZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=LjTZEAAAQBAJ&pg=PA124&dq=jetpack+compose&hl=&cd=9&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=LjTZEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=LjTZEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 219000,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 149000,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=LjTZEAAAQBAJ&rdid=book-LjTZEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 219000000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 149000000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Mastering_Kotlin-sample-pdf.acsm?id=LjTZEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=LjTZEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Cybellium. What is \u003cb\u003eJetpack Compose\u003c/b\u003e? Before diving into the details of integrating Kotlin with \u003cb\u003eJetpack Compose\u003c/b\u003e, let&#39;s briefly define what \u003cb\u003eJetpack Compose\u003c/b\u003e is. It is a declarative framework for building user interfaces in Android, similar&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "i-GcEQAAQBAJ",
+      "etag": "nfh8/Ht5Igc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/i-GcEQAAQBAJ",
+      "volumeInfo": {
+        "title": "Ultimate Kotlin Multiplatform for App Development",
+        "subtitle": "Build High-Performance Android, iOS and Web Apps Using Kotlin Multiplatform, Ktor, Koin, and Modern UI Frameworks (English Edition)",
+        "authors": [
+          "Gowtham Shanmugaraj Ganesan"
+        ],
+        "publisher": "Orange Education Pvt Ltd",
+        "publishedDate": "2025-12-04",
+        "description": "TAGLINE Unify your Android, iOS, and Web Projects with One Powerful Language — Kotlin Multiplatform. KEY FEATURES ● Master cross-platform development with Kotlin for Android, iOS, and Web apps from a single shared codebase. ● Get hands-on with modern libraries and tools like Ktor for networking, dependency injection, SQLDelight for database handling, and Jetpack Compose for UI. ● Enhance productivity with real-world best practices, CI/CD pipelines, testing strategies, and performance optimization. DESCRIPTION Kotlin is a modern, expressive, and versatile language that has transformed the way developers build applications. Ultimate Kotlin Multiplatform for App Development takes you on a complete journey to mastering Kotlin Multiplatform, empowering you to create high-performance Android, iOS, and Web applications from a single shared codebase. You will begin by exploring the core foundations of Kotlin, syntax, structure, and key features, before advancing into topics such as object-oriented and functional programming, coroutines, and concurrency. From there, the book guides you through multiplatform architecture, project setup, Gradle configuration, and dependency management, giving you the skills to structure efficient, scalable cross-platform projects. Practical examples show you how to leverage essential libraries such as Ktor for networking, Koin for dependency injection, SQLDelight for database management, and Multiplatform Settings for shared configurations. Thus, by the end of this book, you will have the confidence and expertise to build, deploy, and optimize cross-platform applications — and become a truly modern Kotlin Multiplatform developer! WHAT WILL YOU LEARN ● Build cross-platform apps for Android, iOS, and Web using a single shared Kotlin codebase. ● Configure and manage multiplatform projects efficiently with Gradle and IDE tools. ● Master Kotlin essentials and advanced concepts, including coroutines, serialization, and functional programming. ● Integrate modern libraries such as Ktor, Koin, and SQLDelight for networking, DI, and data persistence. ● Create native-like UIs with Jetpack Compose, SwiftUI, and Kotlin/React. ● Apply clean architecture and best practices for scalable and maintainable app design. WHO IS THIS BOOK FOR? This book is tailored for mobile, web, and software developers who want to build high-quality, cross-platform applications with a single shared codebase. Prior experience in Android, iOS, or web development is an advantage—but not a necessity. Hence, whether you are a Kotlin beginner or an experienced developer looking to modernize your workflow, this book will help you master Kotlin Multiplatform, and create apps that run seamlessly everywhere. TABLE OF CONTENTS 1. Introduction to Kotlin 2. Basics of Kotlin Programming 3. Advanced Kotlin Programming 4. Understanding Kotlin Multiplatform 5. Building a Multiplatform Project 6. Utilizing Multiplatform Libraries and Tools 7. Android Development with Kotlin Multiplatform 8. iOS Development with Kotlin Multiplatform 9. Web Development with Kotlin Multiplatform 10. Testing and Debugging Multiplatform Code 11. Continuous Integration and Deployment 12. Performance Optimization 13. Best Practices for Multiplatform Development 14. Case Studies and Future Trends Index",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9789349888302"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "9349888300"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 420,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=i-GcEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=i-GcEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.co.id/books?id=i-GcEQAAQBAJ&pg=PT221&dq=jetpack+compose&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=i-GcEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=i-GcEQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "ID",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 470259,
+          "currencyCode": "IDR"
+        },
+        "retailPrice": {
+          "amount": 329181,
+          "currencyCode": "IDR"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=i-GcEQAAQBAJ&rdid=book-i-GcEQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 470259000000,
+              "currencyCode": "IDR"
+            },
+            "retailPrice": {
+              "amountInMicros": 329181000000,
+              "currencyCode": "IDR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "ID",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Ultimate_Kotlin_Multiplatform_for_App_De-sample-epub.acsm?id=i-GcEQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.co.id/books/download/Ultimate_Kotlin_Multiplatform_for_App_De-sample-pdf.acsm?id=i-GcEQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=i-GcEQAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... Jetpack libraries , you can develop powerful Android applications that leverage the strengths of the Android platform , while maintaining the benefits of shared code in Kotlin Multiplatform ... \u003cb\u003eJetpack Compose\u003c/b\u003e Basics of \u003cb\u003eJetpack Compose\u003c/b\u003e."
+      }
+    }
+  ]
+}
