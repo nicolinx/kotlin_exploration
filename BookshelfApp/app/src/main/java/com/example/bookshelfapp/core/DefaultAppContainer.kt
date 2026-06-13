@@ -1,5 +1,23 @@
 package com.example.bookshelfapp.core
 
+import com.example.bookshelfapp.BuildConfig
+import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import kotlinx.serialization.json.Json
+import okhttp3.MediaType.Companion.toMediaType
+import retrofit2.Retrofit
+
 interface AppContainer {}
 
-class DefaultAppContainer : AppContainer {}
+class DefaultAppContainer : AppContainer {
+    private val baseUrl = BuildConfig.BASE_URL
+    private val apiKey = BuildConfig.API_KEY
+
+    private val jsonParser = Json {
+        ignoreUnknownKeys = true
+    }
+
+    private val retrofit: Retrofit = Retrofit.Builder()
+        .addConverterFactory(jsonParser.asConverterFactory("application/json".toMediaType()))
+        .baseUrl(baseUrl)
+        .build()
+}

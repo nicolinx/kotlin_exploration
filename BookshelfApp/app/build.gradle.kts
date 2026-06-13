@@ -58,6 +58,7 @@ dependencies {
     // Network
     implementation(libs.retrofit)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // Coil
     implementation(libs.coil.compose)
