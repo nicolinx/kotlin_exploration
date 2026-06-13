@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.bookshelfapp.R
-import com.example.bookshelfapp.ui.screens.ListScreen
+import com.example.bookshelfapp.ui.screens.DetailScreen
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
 @Composable
@@ -19,7 +19,8 @@ fun App() {
         modifier = Modifier.fillMaxSize(),
         topBar = { MainTopAppBar() }
     ) { innerPadding ->
-        ListScreen(contentPadding = innerPadding)
+//        ListScreen(contentPadding = innerPadding)
+        DetailScreen(contentPadding = innerPadding)
     }
 }
 
