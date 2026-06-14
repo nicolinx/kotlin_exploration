@@ -20,6 +20,7 @@ import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
+import com.example.bookshelfapp.model.Book
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
 @Composable
@@ -42,7 +43,7 @@ fun ListScreen(uiState: ListUiState, contentPadding: PaddingValues) {
                 ),
             ) {
                 items(uiState.books) { book ->
-                    ItemCard()
+                    ItemCard(book)
                 }
             }
     }
@@ -59,13 +60,13 @@ fun InfoText(text: String) {
 }
 
 @Composable
-fun ItemCard(modifier: Modifier = Modifier) {
+fun ItemCard(book: Book, modifier: Modifier = Modifier) {
     Card(
         modifier = modifier
             .aspectRatio(0.8f / 1f)
     ) {
         AsyncImage(
-            model = "https://books.google.com/books/content?id=3bJZEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            model = book.volumeInfo?.imageLinks?.smallThumbnail?.replace("http://", "https://"),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
