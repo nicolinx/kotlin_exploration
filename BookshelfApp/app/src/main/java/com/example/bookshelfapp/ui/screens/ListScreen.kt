@@ -1,6 +1,7 @@
 package com.example.bookshelfapp.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.calculateEndPadding
@@ -10,7 +11,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material3.Card
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -20,24 +23,38 @@ import coil3.compose.AsyncImage
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
 @Composable
-fun ListScreen(contentPadding: PaddingValues) {
-    val mocks = listOf("1", "2", "3", "4")
+fun ListScreen(uiState: ListUiState, contentPadding: PaddingValues) {
     val layoutDirection = LocalLayoutDirection.current
 
-    LazyVerticalGrid(
-        columns = GridCells.Fixed(2),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        horizontalArrangement = Arrangement.spacedBy(12.dp),
-        contentPadding = PaddingValues(
-            top = contentPadding.calculateTopPadding() + 12.dp,
-            bottom = contentPadding.calculateBottomPadding() + 12.dp,
-            start = contentPadding.calculateStartPadding(layoutDirection) + 12.dp,
-            end = contentPadding.calculateEndPadding(layoutDirection) + 12.dp,
-        ),
+    when (uiState) {
+        is ListUiState.Loading -> InfoText("LOADING")
+        is ListUiState.Error -> InfoText("ERROR")
+        is ListUiState.Success ->
+            LazyVerticalGrid(
+                columns = GridCells.Fixed(2),
+                verticalArrangement = Arrangement.spacedBy(12.dp),
+                horizontalArrangement = Arrangement.spacedBy(12.dp),
+                contentPadding = PaddingValues(
+                    top = contentPadding.calculateTopPadding() + 12.dp,
+                    bottom = contentPadding.calculateBottomPadding() + 12.dp,
+                    start = contentPadding.calculateStartPadding(layoutDirection) + 12.dp,
+                    end = contentPadding.calculateEndPadding(layoutDirection) + 12.dp,
+                ),
+            ) {
+                items(uiState.books) { book ->
+                    ItemCard()
+                }
+            }
+    }
+}
+
+@Composable
+fun InfoText(text: String) {
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
     ) {
-        items(mocks) { item ->
-            ItemCard()
-        }
+        Text(text)
     }
 }
 
@@ -60,6 +77,9 @@ fun ItemCard(modifier: Modifier = Modifier) {
 @Composable
 fun ListScreenPreview() {
     BookshelfAppTheme() {
-        ListScreen(contentPadding = PaddingValues(12.dp))
+        ListScreen(
+            uiState = ListUiState.Loading,
+            contentPadding = PaddingValues(12.dp)
+        )
     }
 }

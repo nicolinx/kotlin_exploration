@@ -54,6 +54,7 @@ dependencies {
     // ViewModel Lifecycle
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation(libs.androidx.lifecycle.viewmodel.navigation3)
+    implementation(libs.androidx.navigation.compose)
 
     // Network
     implementation(libs.retrofit)
