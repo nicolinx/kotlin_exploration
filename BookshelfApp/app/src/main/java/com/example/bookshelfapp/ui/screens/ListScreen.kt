@@ -1,5 +1,6 @@
 package com.example.bookshelfapp.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
@@ -21,10 +22,15 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.example.bookshelfapp.model.Book
+import com.example.bookshelfapp.ui.shared.InfoText
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
 @Composable
-fun ListScreen(uiState: ListUiState, contentPadding: PaddingValues) {
+fun ListScreen(
+    uiState: ListUiState,
+    onBookClick: (String) -> Unit = {},
+    contentPadding: PaddingValues
+) {
     val layoutDirection = LocalLayoutDirection.current
 
     when (uiState) {
@@ -43,27 +49,22 @@ fun ListScreen(uiState: ListUiState, contentPadding: PaddingValues) {
                 ),
             ) {
                 items(uiState.books) { book ->
-                    ItemCard(book)
+                    ItemCard(book, onItemClicked = { onBookClick(book.id) })
                 }
             }
     }
 }
 
 @Composable
-fun InfoText(text: String) {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
-    ) {
-        Text(text)
-    }
-}
-
-@Composable
-fun ItemCard(book: Book, modifier: Modifier = Modifier) {
+fun ItemCard(
+    book: Book,
+    onItemClicked: () -> Unit,
+    modifier: Modifier = Modifier
+) {
     Card(
         modifier = modifier
             .aspectRatio(0.8f / 1f)
+            .clickable(onClick = { onItemClicked() })
     ) {
         AsyncImage(
             model = book.volumeInfo?.imageLinks?.smallThumbnail?.replace("http://", "https://"),

@@ -15,7 +15,7 @@ interface BooksApiService {
 
     @GET("v1/volumes/{bookId}")
     suspend fun getBookDetail(
-        @Query("key") key: String,
         @Path("bookId") id: String,
+        @Query("key") key: String,
     ): Book
 }
