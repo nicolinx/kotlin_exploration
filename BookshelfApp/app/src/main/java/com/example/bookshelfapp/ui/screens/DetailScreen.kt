@@ -21,7 +21,7 @@ import coil3.compose.AsyncImage
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
 @Composable
-fun DetailScreen(contentPadding: PaddingValues) {
+fun DetailScreen(uiState: DetailUiState, contentPadding: PaddingValues) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -56,6 +56,6 @@ fun DetailScreen(contentPadding: PaddingValues) {
 @Composable
 fun DetailScreenPreview() {
     BookshelfAppTheme() {
-        DetailScreen(contentPadding = PaddingValues(12.dp))
+        DetailScreen(DetailUiState.Loading, contentPadding = PaddingValues(12.dp))
     }
 }

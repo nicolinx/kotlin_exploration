@@ -14,7 +14,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.bookshelfapp.R
+import com.example.bookshelfapp.ui.screens.DetailScreen
 import com.example.bookshelfapp.ui.screens.ListScreen
+import com.example.bookshelfapp.ui.screens.DetailViewModel
 import com.example.bookshelfapp.ui.screens.ListViewModel
 import com.example.bookshelfapp.ui.theme.BookshelfAppTheme
 
@@ -30,6 +32,11 @@ fun App() {
             composable("list_page") {
                 val viewModel: ListViewModel = viewModel(factory = ListViewModel.Factory)
                 ListScreen(uiState = viewModel.listUiState, contentPadding = innerPadding)
+            }
+
+            composable("detail_page/{bookId") {
+                val viewModel: DetailViewModel = viewModel(factory = DetailViewModel.Factory)
+                DetailScreen(uiState = viewModel.detailUiState, contentPadding = innerPadding)
             }
         }
     }
