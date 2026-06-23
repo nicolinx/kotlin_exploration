@@ -187,8 +187,7 @@ fun BusScheduleScreen(
                     bottom = dimensionResource(R.dimen.padding_medium),
                     start = dimensionResource(R.dimen.padding_medium),
                     end = dimensionResource(R.dimen.padding_medium),
-                )
-            ,
+                ),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(stopNameText)
