@@ -9,6 +9,9 @@ interface BusScheduleDao {
     @Query("SELECT * FROM Schedule ORDER BY arrival_time ASC")
     fun getAllSchedules(): Flow<List<BusSchedule>>
 
+    @Query("SELECT * FROM Schedule where stop_name = :stopName ORDER BY arrival_time ASC")
+    fun getAllSchedulesByStop(stopName: String): Flow<List<BusSchedule>>
+
     @Query("SELECT * FROM Schedule WHERE id = :id")
-    fun getSchedule(id: Int): Flow<BusSchedule>
+    fun getScheduleById(id: Int): Flow<BusSchedule>
 }

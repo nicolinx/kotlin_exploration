@@ -4,10 +4,14 @@ import android.content.Context
 
 interface AppContainer {
     val busScheduleDao: BusScheduleDao
+    val busScheduleRepository: BusScheduleRepository
 }
 
 class AppDataContainer(private val context: Context) : AppContainer {
     override val busScheduleDao: BusScheduleDao by lazy {
         BusScheduleDatabase.getDatabase(context).busScheduleDao()
+    }
+    override val busScheduleRepository: BusScheduleRepository by lazy {
+        BusScheduleRepositoryImpl(busScheduleDao)
     }
 }
