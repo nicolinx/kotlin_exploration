@@ -15,7 +15,6 @@
  */
 package com.example.juicetracker.ui
 
-import ads_mobile_sdk.h5
 import android.view.ViewGroup
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -56,8 +55,19 @@ class JuiceListAdapter(
     private var onDelete: (Juice) -> Unit
 ) : ListAdapter<Juice, JuiceListAdapter.JuiceListViewHolder>(JuiceDiffCallback()) {
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JuiceListViewHolder {
+        return JuiceListViewHolder(
+            ComposeView(parent.context),
+            onEdit,
+            onDelete
+        )
+    }
+
+    override fun onBindViewHolder(holder: JuiceListViewHolder, position: Int) {
+        holder.bind(getItem(position))
+    }
     class JuiceListViewHolder(
-        composeView: ComposeView,
+        private val composeView: ComposeView,
         private val onEdit: (Juice) -> Unit,
         private val onDelete: (Juice) -> Unit
     ) : RecyclerView.ViewHolder(composeView) {
@@ -76,19 +86,6 @@ class JuiceListAdapter(
                 )
             }
         }
-
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): JuiceListViewHolder {
-        return JuiceListViewHolder(
-            ComposeView(parent.context),
-            onEdit,
-            onDelete
-        )
-    }
-
-    override fun onBindViewHolder(holder: JuiceListViewHolder, position: Int) {
-        holder.bind(getItem(position))
     }
 }
 
@@ -116,27 +113,6 @@ fun ListItem(
 }
 
 @Composable
-fun JuiceIcon(color: String, modifier: Modifier = Modifier) {
-    val colorLabelMap = JuiceColor.values().associateBy { stringResource(it.label) }
-    val selectedColor = colorLabelMap[color]?.let { Color(it.color) }
-    val juiceIconContentDescription = stringResource(R.string.juice_color, color)
-
-    Box(
-        modifier.semantics {
-            contentDescription = juiceIconContentDescription
-        }
-    ) {
-        Icon(
-            painter = painterResource(R.drawable.ic_juice_color),
-            contentDescription = null,
-            tint = selectedColor ?: Color.Red,
-            modifier = Modifier.align(Alignment.Center)
-        )
-        Icon(painter = painterResource(R.drawable.ic_juice_clear), contentDescription = null)
-    }
-}
-
-@Composable
 fun JuiceDetails(juice: Juice, modifier: Modifier = Modifier) {
     Column(modifier, verticalArrangement = Arrangement.Top) {
         Text(
@@ -145,26 +121,6 @@ fun JuiceDetails(juice: Juice, modifier: Modifier = Modifier) {
         )
         Text(juice.description)
         RatingDisplay(rating = juice.rating, modifier = Modifier.padding(top = 8.dp))
-    }
-}
-
-@Composable
-fun RatingDisplay(rating: Int, modifier: Modifier = Modifier) {
-    val displayDescription = pluralStringResource(R.plurals.number_of_stars, count = rating)
-    Row(
-        // Content description is added here to support accessibility
-        modifier.semantics {
-            contentDescription = displayDescription
-        }
-    ) {
-        repeat(rating) {
-            // Star [contentDescription] is null as the image is for illustrative purpose
-            Image(
-                modifier = Modifier.size(32.dp),
-                painter = painterResource(R.drawable.baseline_star_24),
-                contentDescription = null
-            )
-        }
     }
 }
 
@@ -181,22 +137,51 @@ fun DeleteButton(onDelete: () -> Unit, modifier: Modifier = Modifier) {
     }
 }
 
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewJuiceIcon() {
-//    JuiceIcon("Yellow")
-//}
-
-//@Preview(showBackground = true)
-//@Composable
-//fun PreviewJuiceDetails() {
-//    JuiceDetails(Juice(1, "Sweet Beet", "Apple, carrot, beet, and lemon", "Red", 4))
-//}
-
-@Preview(showBackground = true)
+/**
+ * Custom icon for juice which is able to adjust for Dark Mode.
+ * contentDescription for Box is added through semantics to support better accessibility.
+ * Icons' contentDescription are nullified as its meaning has been explained by
+ * the box's contentDescription
+ */
 @Composable
-fun PreviewListItem() {
-    ListItem(Juice(1, "Sweet Beet", "Apple, carrot, beet, and lemon", "Red", 4), {})
+fun JuiceIcon(color: String, modifier: Modifier = Modifier) {
+    val colorLabelMap = JuiceColor.values().associateBy { stringResource(it.label) }
+    val selectedColor = colorLabelMap[color]?.let { Color(it.color) }
+    val juiceIconContentDescription = stringResource(R.string.juice_color, color)
+
+    Box(
+        modifier.semantics {
+            contentDescription = juiceIconContentDescription
+        }
+    ) {
+        Icon(
+            painter = painterResource(R.drawable.ic_juice_color),
+            contentDescription = null,
+            tint = selectedColor?: Color.Red,
+            modifier = Modifier.align(Alignment.Center)
+        )
+        Icon(painter = painterResource(R.drawable.ic_juice_clear), contentDescription = null)
+    }
+}
+
+@Composable
+fun RatingDisplay(rating: Int, modifier: Modifier = Modifier) {
+    val displayDescription = pluralStringResource(R.plurals.number_of_stars, count = rating)
+    Row(
+        // Content description is added here to support accessibility
+        modifier.semantics {
+            contentDescription = displayDescription
+        }
+    ) {
+        repeat(rating) {
+            // Star [contentDescription] is null as the image is for illustrative purpose
+            Image(
+                modifier = Modifier.size(32.dp),
+                painter = painterResource(R.drawable.star),
+                contentDescription = null
+            )
+        }
+    }
 }
 
 class JuiceDiffCallback : DiffUtil.ItemCallback<Juice>() {
@@ -207,4 +192,28 @@ class JuiceDiffCallback : DiffUtil.ItemCallback<Juice>() {
     override fun areContentsTheSame(oldItem: Juice, newItem: Juice): Boolean {
         return oldItem == newItem
     }
+}
+
+@Preview
+@Composable
+fun PreviewJuiceIcon() {
+    JuiceIcon("Yellow")
+}
+
+@Preview
+@Composable
+fun PreviewJuiceDetails() {
+    JuiceDetails(Juice(1, "Sweet Beet", "Apple, carrot, beet, and lemon", "Red", 4))
+}
+
+@Preview
+@Composable
+fun PreviewDeleteIcon() {
+    DeleteButton({})
+}
+
+@Preview
+@Composable
+fun PreviewListItem() {
+    ListItem(Juice(1, "Sweet Beet", "Apple, carrot, beet, and lemon", "Red", 4), {})
 }
